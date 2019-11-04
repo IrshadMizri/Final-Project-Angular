@@ -1,0 +1,39 @@
+<div class="container col-sm-6" align="center">
+  <h1 style="text-align:center ; background-color: #4a148c!important; color : #ffff!important">
+    UST Vendor Management
+  </h1>
+  <div class="col-sm-3"></div>
+  <div class="login col-sm-12" style="text-align:center; justify-content: center" align="center">
+    
+
+
+    <form [formGroup]="loginForm" class="text-center border border-light p-5" (ngSubmit)="login()">
+      <p class="h4 mb-4" style="text-align:center">Log in</p>
+      <p [ngClass]="{ 'has-error': isSubmitted && formControls.username.errors }">
+        <input type="username" placeholder="Username" class="form-control mb-4" formControlName="username">
+      </p>
+      <div *ngIf="isSubmitted && formControls.username.errors" class="help-block">
+        <div *ngIf="formControls.username.errors.required">Username is required</div>
+      </div>
+
+
+
+
+      <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+        <input type="password" placeholder="Password" class="form-control mb-4" formControlName="password">
+      </p>
+
+      <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+        <div *ngIf="formControls.password.errors.required">Password is required</div>
+      </div>
+
+
+      <p>
+        <input type="submit" class="btn btn-info btn-block my-4" style="background-color: #4a148c!important"
+          value="Sign in">
+      </p>
+
+    </form>
+
+  </div>
+</div>

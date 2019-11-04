@@ -1,0 +1,38 @@
+<h3>Vendor Details</h3>
+<hr />
+<div *ngIf="vendor">
+    <div>
+        <label><b>Vendor Name</b></label>{{vendor.vName}}
+    </div>
+    <div>
+        <label><b>Address</b></label>{{vendor.vAddress}}
+    </div>
+    <div>
+        <label><b>Location</b></label>{{vendor.vLocation}}
+    </div>
+    <div>
+        <label><b>Service</b></label>{{vendor.vService}}
+    </div>
+    <div>
+        <label><b>PinCode</b></label>{{vendor.vPincode}}
+    </div>
+    <h3>Contact details</h3>
+    <div>
+        <label><b>Contact name</b></label>{{vendor.cName}}
+    </div>
+    <div>
+        <label><b>Department</b></label>{{vendor.cDepartment}}
+    </div>
+    <div>
+        <label><b>E-mail</b></label>{{vendor.cEmail}}
+    </div>
+    <div>
+        <label><b>Phone</b></label>{{vendor.cPhone}}
+    </div>
+
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-deep-orange">Back to Vendor List</button>
+<br>

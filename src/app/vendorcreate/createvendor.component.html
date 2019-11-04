@@ -1,0 +1,135 @@
+<div class="container" align="center">
+<div [hidden]="submitted" style="width: 400px ; align-content: left;text-align: left">
+
+    <form [formGroup]="addvendorForm" novalidate (ngSubmit)="onSubmit()" style="color: #000000">
+        <!-- Asset name -->
+        <h3 style="text-align: center">Create New Vendor</h3>
+        <div class="form-group">
+
+            <label for="name"> Vendor Name</label>
+            <input type="text" class="form-control" formControlName="vName" #VName />
+
+        </div>
+
+        <div *ngIf="addvendorForm.controls['vName'].invalid && (addvendorForm.controls['vName'].dirty || addvendorForm.controls['vName'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="addvendorForm.controls['vName'].errors.required">
+                Vendor Name is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <label for="name"> Vendor Address</label>
+            <input type="text" class="form-control" formControlName="vAddress" #vAddress />
+
+        </div>
+
+        <div *ngIf="addvendorForm.controls['vAddress'].invalid && (addvendorForm.controls['vAddress'].dirty || addvendorForm.controls['vAddress'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="addvendorForm.controls['vAddress'].errors.required">
+                Vendor Address is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name"> Location </label>
+            <select formControlName="vLocation" class="form-control" required>
+                <option value="" disabled>Choose Location</option>
+                <option value="Trivandrum">Trivandrum</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Chennai">Chennai</option>
+                
+            </select>
+        </div>
+        <div *ngIf="addvendorForm.controls['vLocation'].invalid && (addvendorForm.controls['vLocation'].dirty || addvendorForm.controls['vLocation'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="addvendorForm.controls['vLocation'].errors.required">
+                Location is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Service Provided</label>
+            <input type="text" class="form-control" formControlName="vService" #vService />
+
+        </div>
+        <div *ngIf="addvendorForm.controls['vService'].invalid && (addvendorForm.controls['vService'].dirty || addvendorForm.controls['vService'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="addvendorForm.controls['vService'].errors.required">
+                Service is required.
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label for="name"> Pincode</label>
+            <input type="text" class="form-control" formControlName="vPincode" #vPincode />
+        </div>
+        <div *ngIf="addvendorForm.controls['vPincode'].invalid && (addvendorForm.controls['vPincode'].dirty || addvendorForm.controls['vPincode'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="addvendorForm.controls['vPincode'].errors.required">
+                Pincode is required.
+            </div>
+        </div>
+
+        <h3>Contact Details</h3>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" formControlName="cName" #cName />
+        </div>
+        <div *ngIf="addvendorForm.controls['cName'].invalid && (addvendorForm.controls['cName'].dirty || addvendorForm.controls['cName'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="addvendorForm.controls['cName'].errors.required">
+                Name is required.
+            </div>
+        </div>
+
+
+
+        
+        <div class="form-group">
+            <label for="name">Department</label>
+            <input type="textArea" class="form-control" required formControlName="cDepartment" #cDepartment>
+        </div>
+        <div *ngIf="addvendorForm.controls['cDepartment'].invalid && (addvendorForm.controls['cDepartment'].dirty || addvendorForm.controls['cDepartment'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="addvendorForm.controls['cDepartment'].errors.required">
+                Department is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name">E-mail</label>
+            <input type="textArea" class="form-control" required formControlName="cEmail" #cEmail>
+        </div>
+        <div *ngIf="addvendorForm.controls['cEmail'].invalid && (addvendorForm.controls['cEmail'].dirty || addvendorForm.controls['cEmail'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="addvendorForm.controls['cEmail'].errors.required">
+                E-mail is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Phone</label>
+            <input type="textArea" class="form-control" required formControlName="cPhone" #cPhone>
+        </div>
+        <div *ngIf="addvendorForm.controls['cPhone'].invalid && (addvendorForm.controls['cPhone'].dirty || addvendorForm.controls['cPhone'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="addvendorForm.controls['cPhone'].errors.required">
+                Phone is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-secondary btn-rounded btn-sm col-sm-12" style="background-color: #4a148c!important"
+                [disabled]="addvendorForm.pristine || addvendorForm.invalid">
+                Add Vendor
+            </button>
+        </div>
+    </form>
+</div>
+</div>
